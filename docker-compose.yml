@@ -1,0 +1,58 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: coreveil
+      POSTGRES_PASSWORD: coreveil
+      POSTGRES_DB: coreveil
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  chroma:
+    image: chromadb/chroma:0.5.5
+    ports:
+      - "127.0.0.1:8001:8000"
+    volumes:
+      - chromadata:/chroma/chroma
+
+  backend:
+    build: ./backend
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgresql://coreveil:coreveil@postgres:5432/coreveil
+      CHROMA_HOST: chroma
+      CHROMA_PORT: 8000
+      STORAGE_PATH: /data/storage
+    volumes:
+      - ./backend:/app
+      - storage:/data/storage
+    ports:
+      - "127.0.0.1:8000:8000"
+    depends_on:
+      - postgres
+      - chroma
+
+  frontend:
+    build: ./frontend
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+      # macOS Docker bind mounts don't reliably propagate inotify events,
+      # so Next.js's file watcher misses edits made from the host without
+      # this — falls back to polling instead.
+      WATCHPACK_POLLING: "true"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:
+  chromadata:
+  storage:

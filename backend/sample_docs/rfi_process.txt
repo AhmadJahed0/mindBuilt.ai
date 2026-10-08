@@ -1,0 +1,9 @@
+Internal Note — RFI Process for New Engineers
+
+An RFI (Request for Information) should be logged in the project tracker
+before it is sent to the client or contractor. Every RFI must reference
+the relevant spec section using CSI MasterFormat numbering.
+
+New engineers frequently ask who approves RFIs before they go out: RFIs
+under $5,000 in potential cost impact may be sent by a project engineer
+directly. Anything above that threshold requires project manager sign-off.
