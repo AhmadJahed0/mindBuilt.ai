@@ -44,7 +44,7 @@ export default function SignupPage() {
       <div className="auth-card">
         <span className="brand auth-brand">
           <span className="logo-mark" />
-          <span className="mark header-mark">Coreveil</span>
+          <span className="mark header-mark">mindbuilt.ai</span>
         </span>
         <p className="auth-sub">
           Create an account to get started. <span className="auth-note">Open to anyone for now — this will be

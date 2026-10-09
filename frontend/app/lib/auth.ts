@@ -1,8 +1,8 @@
 "use client";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-const TOKEN_KEY = "coreveil.token";
-const USER_KEY = "coreveil.user";
+const TOKEN_KEY = "mindbuilt.token";
+const USER_KEY = "mindbuilt.user";
 
 export type AuthUser = { id: number; name: string; email: string };
 

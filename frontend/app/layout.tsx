@@ -20,7 +20,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata = {
-  title: "Coreveil — Internal Knowledge Assistant",
+  title: "mindbuilt.ai — Internal Knowledge Assistant",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

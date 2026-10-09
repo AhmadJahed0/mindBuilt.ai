@@ -31,7 +31,7 @@ from app.schemas import (
     MessageOut,
 )
 
-app = FastAPI(title="Coreveil")
+app = FastAPI(title="mindbuilt.ai")
 
 # Dev-only: allows the local Next.js frontend to call this API from the
 # browser. Production should restrict this to the actual deployed frontend

@@ -1,4 +1,4 @@
--- Coreveil: core schema
+-- mindbuilt.ai: core schema
 -- Matches the permissions model from the architecture doc:
 -- ownership and access are separate; SQL is the source of truth for both.
 

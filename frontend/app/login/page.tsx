@@ -43,7 +43,7 @@ export default function LoginPage() {
       <div className="auth-card">
         <span className="brand auth-brand">
           <span className="logo-mark" />
-          <span className="mark header-mark">Coreveil</span>
+          <span className="mark header-mark">mindbuilt.ai</span>
         </span>
         <p className="auth-sub">Internal Knowledge Assistant — sign in to continue</p>
 

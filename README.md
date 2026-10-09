@@ -1,4 +1,4 @@
-# Coreveil
+# mindbuilt.ai
 
 Private, internal knowledge assistant — a RAG system over a company's own
 documents, with SQL-enforced permissions and no data sent anywhere outside

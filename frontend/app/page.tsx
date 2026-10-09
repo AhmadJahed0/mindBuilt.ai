@@ -52,11 +52,11 @@ export default function ChatPage() {
 
   // Sidebar open/closed is a per-viewer convenience, not shared state.
   useEffect(() => {
-    const stored = localStorage.getItem("coreveil.sidebarOpen");
+    const stored = localStorage.getItem("mindbuilt.sidebarOpen");
     if (stored !== null) setSidebarOpen(stored === "true");
   }, []);
   useEffect(() => {
-    localStorage.setItem("coreveil.sidebarOpen", String(sidebarOpen));
+    localStorage.setItem("mindbuilt.sidebarOpen", String(sidebarOpen));
   }, [sidebarOpen]);
 
   useEffect(() => {
@@ -186,7 +186,7 @@ export default function ChatPage() {
         <div className="sidebar-header">
           <span className="brand">
             <span className="logo-mark" />
-            <span className="mark">Coreveil</span>
+            <span className="mark">mindbuilt.ai</span>
           </span>
           <button className="icon-btn" onClick={() => setSidebarOpen(false)} aria-label="Collapse sidebar">
             <PanelIcon />
@@ -283,7 +283,7 @@ export default function ChatPage() {
           )}
           <span className="brand">
             <span className="logo-mark" />
-            <span className="mark header-mark">Coreveil</span>
+            <span className="mark header-mark">mindbuilt.ai</span>
           </span>
           <span className="tagline">Internal Knowledge Assistant</span>
           <Link href="/upload" className="nav-link">
@@ -311,7 +311,7 @@ export default function ChatPage() {
 
             {messages.map((m, i) => (
               <div key={i} className={`row ${m.role}`}>
-                {m.role === "assistant" && <span className="label">Coreveil</span>}
+                {m.role === "assistant" && <span className="label">mindbuilt.ai</span>}
                 <div className={`bubble ${m.error ? "error" : ""}`}>
                   {m.role === "assistant" ? (
                     <ReactMarkdown
@@ -344,7 +344,7 @@ export default function ChatPage() {
 
             {loading && (
               <div className="row assistant">
-                <span className="label">Coreveil</span>
+                <span className="label">mindbuilt.ai</span>
                 <div className="thinking">
                   <span />
                   <span />
