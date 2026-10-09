@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { API_URL, setSession } from "../lib/auth";
 import PasswordField from "../components/PasswordField";
+import Logo from "../components/Logo";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -42,7 +43,7 @@ export default function LoginPage() {
     <div className="auth-page">
       <div className="auth-card">
         <span className="brand auth-brand">
-          <span className="logo-mark" />
+          <Logo size={30} />
           <span className="mark header-mark">mindbuilt.ai</span>
         </span>
         <p className="auth-sub">Internal Knowledge Assistant — sign in to continue</p>

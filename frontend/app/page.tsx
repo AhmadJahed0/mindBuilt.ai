@@ -8,6 +8,7 @@ import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import rehypeSanitize from "rehype-sanitize";
 import { authFetch, getToken, getStoredUser, clearSession, downloadDocument, AuthUser } from "./lib/auth";
+import Logo from "./components/Logo";
 
 type Citation = { document_id: number; filename: string; page_number: string };
 type Message = { role: "user" | "assistant"; text: string; citations?: Citation[]; error?: boolean };
@@ -185,7 +186,7 @@ export default function ChatPage() {
       <aside className={`sidebar ${sidebarOpen ? "" : "closed"}`}>
         <div className="sidebar-header">
           <span className="brand">
-            <span className="logo-mark" />
+            <Logo size={22} />
             <span className="mark">mindbuilt.ai</span>
           </span>
           <button className="icon-btn" onClick={() => setSidebarOpen(false)} aria-label="Collapse sidebar">
@@ -282,7 +283,7 @@ export default function ChatPage() {
             </button>
           )}
           <span className="brand">
-            <span className="logo-mark" />
+            <Logo size={24} />
             <span className="mark header-mark">mindbuilt.ai</span>
           </span>
           <span className="tagline">Internal Knowledge Assistant</span>
